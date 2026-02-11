@@ -434,6 +434,17 @@
       gap: 0.5rem;
     }
 
+    .song-name {
+      font-size: 0.9rem;
+      color: var(--accent-primary);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .progress-bar {
       height: 4px;
       background: rgba(255, 255, 255, 0.1);
@@ -941,12 +952,15 @@
           <div class="audio-player">
             <button class="play-btn" id="playBtn">▶</button>
             <div class="progress-wrapper">
+              <div class="song-name" id="songName">JAMESY - NACHANA ft VZN & Hennie baker</div>
               <div class="progress-bar" id="progressBar">
                 <div class="progress-fill" id="progressFill"></div>
               </div>
               <div class="time-display">
+                 
                 <span id="currentTime">0:00</span>
-                <span id="duration">3:08</span>
+                <span id="duration">5:05</span>
+              
               </div>
             </div>
             <input type="range" class="volume-control" id="volume" min="0" max="1" step="0.01" value="0.7">
@@ -1344,4 +1358,3 @@
   </script>
 </body>
 </html>
-
