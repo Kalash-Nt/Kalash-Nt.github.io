@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter for Nibita</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Script', cursive;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(180, 30, 60, 0.5), transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(150, 20, 50, 0.4), transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(120, 15, 40, 0.6), transparent 70%),
+                linear-gradient(135deg, #5a0000 0%, #8b0000 25%, #a01010 50%, #8b0000 75%, #5a0000 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    transparent 2px,
+                    transparent 4px,
+                    rgba(255, 255, 255, 0.03) 6px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    transparent 2px,
+                    transparent 4px,
+                    rgba(255, 255, 255, 0.03) 6px
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at top, rgba(255, 255, 255, 0.08), transparent 60%),
+                radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.3), transparent 60%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Love Letter Image Container */
+        .love-letter-image {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 
+                0 8px 32px 0 rgba(0, 0, 0, 0.5),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+                0 0 80px rgba(180, 30, 60, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            animation: fadeInUp 1.5s ease-out;
+            z-index: 10;
+        }
+
+        .love-letter-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            pointer-events: none;
+        }
+
+        .love-letter-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(196, 30, 58, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(196, 30, 58, 0.8);
+            }
+        }
+
+        /* Bouquet Image (positioned relative to the love-letter image) */
+        .bouquet-image {
+            width: 320px;
+            max-width: 36%;
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            animation: fadeInBouquet 2s ease-out forwards;
+            z-index: 20;
+            transform-origin: bottom center;
+        }
+
+        .bouquet-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.5));
+        }
+
+        @keyframes fadeInBouquet {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                text-shadow: 
+                    0 0 15px rgba(255, 179, 217, 0.8),
+                    2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                text-shadow: 
+                    0 0 30px rgba(255, 179, 217, 1),
+                    0 0 50px rgba(255, 100, 150, 0.8),
+                    2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        /* Floating Light Particles */
+        .light-particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+            border-radius: 50%;
+            animation: floatParticle 8s ease-in-out infinite;
+            opacity: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(50vh) translateX(50px) scale(1);
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-20vh) translateX(-50px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .love-letter-image {
+                padding: 15px;
+            }
+
+            .bouquet-image {
+                right: 10px;
+                bottom: 10px;
+                width: 180px;
+                max-width: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Love Letter Image -->
+    <div class="container">
+        <div class="love-letter-image">
+            <img src="nibita.jpg" alt="Love Letter for Nibita">
+            <div class="bouquet-image">
+                <img src="bouquer.png" alt="Rose Bouquet">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create light particles for glass diffusion effect
+        function createLightParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'light-particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 10000);
+        }
+        
+        // Create light particles periodically for professional ambiance
+        setInterval(createLightParticle, 400);
+        
+        // Create initial batch of light particles
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createLightParticle, i * 150);
+        }
+    </script>
+</body>
+</html>
